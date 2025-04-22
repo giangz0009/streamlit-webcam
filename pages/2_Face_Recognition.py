@@ -5,14 +5,6 @@ import cv2 as cv
 import numpy as np
 import joblib
 
-webrtc_streamer(
-    key="face-recognition",
-    video_frame_callback=your_callback_function,
-    rtc_configuration={
-        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
-    }
-)
-
 # Load các model nhận diện
 svc = joblib.load('svc.pkl')
 mydict = ['BanKiet', 'BanNghia', 'BanNguyen', 'BanThanh', 'SangSang', 'ThayDuc']
@@ -79,4 +71,6 @@ class FaceRecognitionTransformer(VideoTransformerBase):
         self.visualize(img, faces, self.tm.getFPS())
         return img
 
-webrtc_streamer(key="face-detection", video_transformer_factory=FaceRecognitionTransformer)
+webrtc_streamer(key="face-detection", video_transformer_factory=FaceRecognitionTransformer,rtc_configuration={
+        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+    })
