@@ -70,11 +70,11 @@ webrtc_streamer(
     key="face-detection",
     video_frame_callback=video_frame_callback,
     rtc_configuration={"iceServers": [{
-   urls: [ "stun:ss-turn2.xirsys.com" ]
+   "urls": [ "stun:ss-turn2.xirsys.com" ]
 }, {
-   username: "842WZG-XeDKmIK4bVyiFPMrMkL62rRByOy1apVF1I5dgC0Hn2H9gmH88j_eR25srAAAAAGgHhxxnaWFuZ3owMDA5",
-   credential: "b952f87c-1f72-11f0-aaa6-0242ac140004",
-   urls: [
+   "username": "842WZG-XeDKmIK4bVyiFPMrMkL62rRByOy1apVF1I5dgC0Hn2H9gmH88j_eR25srAAAAAGgHhxxnaWFuZ3owMDA5",
+   "credential": "b952f87c-1f72-11f0-aaa6-0242ac140004",
+   "urls": [
        "turn:ss-turn2.xirsys.com:80?transport=udp",
        "turn:ss-turn2.xirsys.com:3478?transport=udp",
        "turn:ss-turn2.xirsys.com:80?transport=tcp",
